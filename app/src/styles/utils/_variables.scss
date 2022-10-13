@@ -1,0 +1,64 @@
+@use "functions" as fn;
+@use "sass:map";
+
+//1-VARIABLES
+// Colors
+$palette: (
+  "color-primary": #4071ca,
+  "color-background-primary": #fff,
+  "color-background-secondary": #eee,
+  "color-title": #333,
+  "color-text": #999,
+  "color-placeholder": #ccc,
+  "color-border": #ccc,
+);
+// Tipography
+$font-size-default: fn.pxTorem(16px);
+$typography: (
+  "font-family": (
+    "Roboto",
+    sans-serif,
+  ),
+  "font-size": (
+    "24": fn.pxTorem(24px),
+    "16": fn.pxTorem(16px),
+  ),
+);
+// Media queries
+$breakpoints: (
+  "xxlarge": 1440px,
+  "xlarge": 1200px,
+  "large": 992px,
+  "medium": 768px,
+  "small": 596px,
+  "xsmall": 0,
+);
+//2-MAP
+@function getColor($color) {
+  @return map.get($palette, $color);
+}
+@function getTypography($property) {
+  @if ($property == "font-family") {
+    @return map.get($typography, $property);
+  } @else {
+    @return map.get(map.get($typography, "font-size"), $property);
+  }
+}
+@function getMedia($media) {
+  @return map.get($breakpoints, $media);
+}
+//3-CUSTOM PROPERTIES
+:root {
+  // Colors
+  --color-primary: #{getColor("color-primary")};
+  --color-background-primary: #{getColor("color-background-primary")};
+  --color-background-secondary: #{getColor("color-background-secondary")};
+  --color-title: #{getColor("color-title")};
+  --color-text: #{getColor("color-text")};
+  --color-placeholder: #{getColor("color-placeholder")};
+  --color-border: #{getColor("color-border")};
+  // Tipography
+  --font-family: #{getTypography("font-family")};
+  --font-size-24: #{getTypography("24")};
+  --font-size-16: #{getTypography("16")};
+}

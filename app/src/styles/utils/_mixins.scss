@@ -1,0 +1,38 @@
+@use "variables" as var;
+@use "functions" as fn;
+@use "sass:meta";
+
+@mixin createFlex(
+  $direction: row,
+  $align-axis-main: center,
+  $align-axis-cross: center
+) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align-axis-cross;
+  justify-content: $align-axis-main;
+  width: 100%;
+  @content;
+}
+@mixin createGrid($gap: 20px, $rows, $columns, $area: "") {
+  display: grid;
+  grid-template-rows: $rows;
+  grid-template-columns: $columns;
+  gap: fn.pxTorem($gap);
+  @if ($area != "") {
+    @include createArea($area);
+  }
+  @content;
+}
+@mixin createPseudoelement($pseudoelement: before, $content: "") {
+  &::#{$pseudoelement} {
+    position: absolute;
+    content: $content;
+    @content;
+  }
+}
+@mixin addBreakpoint($media) {
+  @media screen and (max-width: var.getMedia($media)) {
+    @content;
+  }
+}
