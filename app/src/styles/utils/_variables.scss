@@ -8,7 +8,8 @@ $palette: (
   "color-background-primary": #fff,
   "color-background-secondary": #eee,
   "color-title": #333,
-  "color-text": #999,
+  "color-text-dark": #999,
+  "color-text-light": #fff,
   "color-placeholder": #ccc,
   "color-border": #ccc,
 );
@@ -21,7 +22,9 @@ $typography: (
   ),
   "font-size": (
     "24": fn.pxTorem(24px),
+    "20": fn.pxTorem(20px),
     "16": fn.pxTorem(16px),
+    "14": fn.pxTorem(14px),
   ),
 );
 // Media queries
@@ -54,11 +57,13 @@ $breakpoints: (
   --color-background-primary: #{getColor("color-background-primary")};
   --color-background-secondary: #{getColor("color-background-secondary")};
   --color-title: #{getColor("color-title")};
-  --color-text: #{getColor("color-text")};
+  --color-text-dark: #{getColor("color-text-dark")};
+  --color-text-light: #{getColor("color-text-light")};
   --color-placeholder: #{getColor("color-placeholder")};
   --color-border: #{getColor("color-border")};
   // Tipography
   --font-family: #{getTypography("font-family")};
   --font-size-24: #{getTypography("24")};
-  --font-size-16: #{getTypography("16")};
+  --font-size-20: #{getTypography("20")};
+  --font-size-14: #{getTypography("14")};
 }

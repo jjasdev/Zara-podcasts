@@ -2,9 +2,9 @@
 @use "../utils/functions" as fn;
 
 /* Global */
-body {
+#root {
   min-height: 100vh;
-  min-width: fn.pxTorem(320px);
+  max-width: 100%;
   font-family: var(--font-family);
   font-size: var(--font-size-16);
   background-color: var(--color-background-primary);
@@ -21,7 +21,7 @@ h6 {
   color: var(--color-title);
 }
 p {
-  color: var(--color-text);
+  color: var(--color-text-dark);
 }
 a {
   color: var(--color-primary);

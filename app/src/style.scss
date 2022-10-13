@@ -8,6 +8,9 @@
 @forward "styles/base/global";
 
 // Components
+@forward "./components/Header/Header";
+@forward "./components/Footer/Footer";
+@forward "./components/Cards/Card";
 
 // Views
 @forward "./views/Home/Home";

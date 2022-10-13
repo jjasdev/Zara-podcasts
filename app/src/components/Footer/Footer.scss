@@ -3,4 +3,14 @@
 
 /* Footer */
 .Footer {
+  min-height: fn.pxTorem(70px);
+  width: 100%;
+  border-top: 1px solid var(--color-border);
+  @include mx.createFlex(column, center, center);
+
+  &-copy {
+    &--strong {
+      font-weight: bold;
+    }
+  }
 }

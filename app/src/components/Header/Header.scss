@@ -3,4 +3,15 @@
 
 /* Header */
 .Header {
+  height: fn.pxTorem(70px);
+  width: 100%;
+  padding: fn.pxTorem(30px);
+  border-bottom: 1px solid var(--color-border);
+  @include mx.createFlex(row, space-between, center);
+
+  &-title {
+    font-size: var(--font-size-24);
+    font-weight: bold;
+    color: var(--color-primary);
+  }
 }

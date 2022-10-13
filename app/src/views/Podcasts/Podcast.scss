@@ -3,4 +3,44 @@
 
 /* Podcast */
 .Podcast {
+  width: 100%;
+  padding: fn.pxTorem(30px);
+  flex-grow: 1;
+
+  &-container {
+    height: auto;
+    position: relative;
+    padding: 0 fn.pxTorem(30px);
+    margin-top: fn.pxTorem(30px);
+    border: 1px solid var(--color-border);
+    border-radius: 7px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    @include mx.createFlex(column, space-between, center) {
+      gap: fn.pxTorem(8px);
+    }
+  }
+  &-top,
+  &-bottom {
+    padding-top: fn.pxTorem(16px);
+    padding-bottom: fn.pxTorem(16px);
+  }
+  &-main {
+    width: 100%;
+    padding: fn.pxTorem(16px) 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  &-image {
+    border-radius: 7px;
+  }
+
+  &-title,
+  &-text {
+    text-align: center;
+  }
+
+  &-text {
+    font-style: italic;
+  }
 }
